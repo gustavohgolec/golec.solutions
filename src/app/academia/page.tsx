@@ -20,19 +20,19 @@ export default async function AcademiaPage() {
   });
 
   const totalItems = tracks.reduce(
-    (acc, t) => acc + t.modules.reduce((mAcc, m) => mAcc + m.items.length, 0),
+    (acc: number, t: any) => acc + t.modules.reduce((mAcc: number, m: any) => mAcc + m.items.length, 0),
     0
   );
 
   const completedItems = tracks.reduce(
-    (acc, t) =>
-      acc +
-      t.modules.reduce(
-        (mAcc, m) =>
-          mAcc +
-          m.items.filter((i) => i.progress?.some((p) => p.status === "COMPLETED")).length,
-        0
-      ),
+      (acc: number, t: any) =>
+        acc +
+        t.modules.reduce(
+            (mAcc: number, m: any) =>
+              mAcc +
+          m.items.filter((i: any) => i.progress?.some((p: any) => p.status === "COMPLETED")).length,
+          0
+        ),
     0
   );
 

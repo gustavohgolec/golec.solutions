@@ -56,32 +56,34 @@ export default async function ConfiguracoesPage() {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-800 text-slate-300">
-                  {users.map((u) => (
-                    <tr key={u.id} className="hover:bg-slate-800/40 transition-colors">
-                      <td className="p-3.5 font-medium text-white flex items-center gap-2">
-                        <div className="w-6 h-6 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-[10px] font-semibold text-slate-200">
-                          {u.name.slice(0, 2).toUpperCase()}
-                        </div>
-                        {u.name}
-                      </td>
-                      <td className="p-3.5 text-slate-400">{u.email}</td>
-                      <td className="p-3.5">
-                        <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-blue-500/10 text-blue-400 border border-blue-500/20 font-semibold">
-                          {u.role}
-                        </span>
-                      </td>
-                      <td className="p-3.5">
-                        <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                          {u.active ? "Ativo" : "Inativo"}
-                        </span>
-                      </td>
-                      <td className="p-3.5 text-right">
-                        <button className="text-cyan-400 hover:text-cyan-300 font-medium">
-                          Editar Papel
-                        </button>
-                      </td>
-                    </tr>
-                  ))}
+                    {
+                      users.map((u: any) => (
+                        <tr key={u.id} className="hover:bg-slate-800/40 transition-colors">
+                          <td className="p-3.5 font-medium text-white flex items-center gap-2">
+                            <div className="w-6 h-6 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-[10px] font-semibold text-slate-200">
+                              {u.name.slice(0, 2).toUpperCase()}
+                            </div>
+                            {u.name}
+                          </td>
+                          <td className="p-3.5 text-slate-400">{u.email}</td>
+                          <td className="p-3.5">
+                            <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-blue-500/10 text-blue-400 border border-blue-500/20 font-semibold">
+                              {u.role}
+                            </span>
+                          </td>
+                          <td className="p-3.5">
+                            <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                              {u.active ? "Ativo" : "Inativo"}
+                            </span>
+                          </td>
+                          <td className="p-3.5 text-right">
+                            <button className="text-cyan-400 hover:text-cyan-300 font-medium">
+                              Editar Papel
+                            </button>
+                          </td>
+                        </tr>
+                      ))
+                    }
                 </tbody>
               </table>
             </div>
